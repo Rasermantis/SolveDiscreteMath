@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Karnaugh Solve</title>
+
+    <link rel="stylesheet" href="main.css">
+    <script src="Table.js"></script>
+    <script src="Rectangle.js"></script>
+    <script src="Cell.js"></script>
+    <script src="Projection.js"></script>
+    <script src="Rectangle_container.js"></script>
+    <script src="Cell_container.js"></script>
+    <script src="Karnaugh.js"></script>
+    <script src="Program.js"></script>
+</head>
+
+<body style="width: 100%; margin: 0; ">
+
+    <section>
+        <div class="container center">
+            <form id="myForm">
+                <table class="center">
+                    <tr>
+                        <th></th>
+                        <td colspan="2">X</td>
+                        <td colspan="2" style="text-decoration: overline;">X</td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Z</th>
+                        <td><button id="btn1" type="button" onclick="SelectCell(1);">00</button></td>
+                        <td><button id="btn2" type="button" onclick="SelectCell(2);">01</button></td>
+                        <td><button id="btn3" type="button" onclick="SelectCell(3);">03</button></td>
+                        <td><button id="btn4" type="button" onclick="SelectCell(4);">02</button></td>
+                        <th style="text-decoration: overline;">T</th>
+                    </tr>
+                    <tr>
+                        <td><button id="btn5" type="button" onclick="SelectCell(5);">04</button></td>
+                        <td><button id="btn6" type="button" onclick="SelectCell(6);">05</button></td>
+                        <td><button id="btn7" type="button" onclick="SelectCell(7);">07</button></td>
+                        <td><button id="btn8" type="button" onclick="SelectCell(8);">06</button></td>
+                        <th rowspan="2">T</th>
+                    </tr>
+                    <tr>
+                        <th rowspan="2" style="text-decoration: overline;">Z</th>
+                        <td><button id="btn9" type="button" onclick="SelectCell(9);">12</button></td>
+                        <td><button id="btn10" type="button" onclick="SelectCell(10);">13</button></td>
+                        <td><button id="btn11" type="button" onclick="SelectCell(11);">15</button></td>
+                        <td><button id="btn12" type="button" onclick="SelectCell(12);">14</button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="btn13" type="button" onclick="SelectCell(13);">08</button></td>
+                        <td><button id="btn14" type="button" onclick="SelectCell(14);">09</button></td>
+                        <td><button id="btn15" type="button" onclick="SelectCell(15);">11</button></td>
+                        <td><button id="btn16" type="button" onclick="SelectCell(16);">10</button></td>
+                        <th style="text-decoration: overline;">T</th>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td style="text-decoration: overline;">Y</td>
+                        <td colspan="2">Y</td>
+                        <td style="text-decoration: overline;">Y</td>
+                        <th></th>
+                    </tr>
+                </table>
+            </form>
+            <br>
+            <button id="btnSolve" type="button" onclick="Solve()" class="button_">Solve</button>
+            <button class="button_"><a href="index.html" style="text-decoration: none; color: black;">Reset</a></button>
+            <br>
+
+            <br>
+            <textarea id="result" class="res" rows="8" cols="50" style="
+            min-width: 25%;"> </textarea>
+
+        </div>
+        <br>
+    </section>
+    <section>
+        <footer id="footer">
+            <!-- <div id="_foot">
+                <img src="/img/logo.png" class="logo-footer" alt="logo-footer" style="max-width: 1200px; left: 10rem;">
+                <ul>
+                    <li><a href="#report">Rent Report</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#terms">Terms</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#">Français (FR)</a></li>
+                </ul>
+            </div>
+            <hr>
+            <div class="footer-content">
+                <div class="col-1">
+                    <h3>Popular Search</h3>
+                    <ul>
+                        <li>
+                            <a href="#">Apartments & Condos near me</a>
+                        </li>
+                        <li>
+                            <a href="#">Apartments near me</a>
+                        </li>
+                        <li>
+                            <a href="#">Condos near me</a>
+                        </li>
+                        <li>
+                            <a href="#">Houses near me</a>
+                        </li>
+                        <li>
+                            <a href="#">Rooms near me</a>
+                        </li>
+                        <li>
+                            <a href="#">All rentals near me</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-2">
+                    <h3>LandLords</h3>
+                    <ul>
+                        <li><a href="#" class="post-for-free">Post for Free</a></li>
+                        <li><a href="#">My Listings</a></li>
+                        <li><a href="#">Email Preferences</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </div>
+            
+                <div class="col-4">
+                    <h3>Follow Us</h3>
+                    <a href="#Facebook" class="fa fa-facebook" id="fb"></a>
+                    <a href="#Instagram" class="fa fa-instagram" id="ins"></a>
+                    <a href="#Twitter" class="fa fa-twitter" id="tw"></a>
+                    <a href="#Youtube" class="fa fa-youtube" id="yt"></a>
+                    <a href="#Google" class="fa fa-google" id="gg"></a>
+                    <a href="#LinkedIn" class="fa fa-linkedin" id="lin"></a>
+                </div> 
+            </div>-->
+            <div class="background-footer"></div>
+        </footer>
+    </section>
+
+</body>
+
+</html>
