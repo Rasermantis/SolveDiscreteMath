@@ -16,12 +16,12 @@ function SelectCell(name) {
 
 function SetColorForBtn(idBtn) {
     document.getElementById(idBtn).style.color = "red";
-   // document.getElementById(idBtn).style.backgroundColor = "#A52A2A";
+    // document.getElementById(idBtn).style.backgroundColor = "#A52A2A";
 }
 
 function RemoveColorForBtn(idBtn) {
     document.getElementById(idBtn).style.color = "black";
-   //document.getElementById(idBtn).style.backgroundColor = "#ccc4c4";
+    //document.getElementById(idBtn).style.backgroundColor = "#ccc4c4";
 }
 
 function Solve() {

@@ -1,7 +1,7 @@
 button {
     border: 1px solid black;
     background-color: hsl(0, 0%, 97%);
-    background-image: linear-gradient(to bottom, hsl(0, 0%, 100%),hsl(0, 0%,90%));
+    background-image: linear-gradient(to bottom, hsl(0, 0%, 100%), hsl(0, 0%, 90%));
     font-weight: 600;
     padding: 15px 20px;
     text-align: center;
@@ -13,37 +13,42 @@ button {
     outline: none;
 }
 
-
 table,
 th,
-td{
+td {
     font-weight: 600;
     border: none;
     padding: 1px 1px;
 }
-/* #btn1 {background-color: #4CAF50;} Green */
-.container{
+
+.container {
     width: 100%;
     text-align: center;
 }
-.center{
+
+.center {
     margin-left: auto;
     margin-right: auto;
 }
-.button_{
+
+.button_ {
     width: 9.5%;
     background-color: hsl(0, 0%, 97%);
     background-image: linear-gradient(to bottom, hsl(0, 0%, 98%), hsl(0, 0%, 90%));
 }
-#result{
-    font-family: 'Times New Roman', Times, serif;
+
+#result {
+    font-family: 'Nunito', sans-serif;
     font-weight: bold;
     font-size: 20px;
     text-align: center;
     border: 1px solid;
 }
 
+
 /* Footer */
+
+
 /* 
 .content{
 height: 150px;
@@ -74,9 +79,12 @@ margin: 0 auto;
 }
 
  */
+
+
 /* FOOTER CSS */
+
 #footer {
-   background-color: #1CC6CD;
+    background-color: #1CC6CD;
     color: white;
     position: absolute;
     width: 100%;
@@ -92,7 +100,8 @@ margin: 0 auto;
     right: 20%;
 }
 
-#_foot ul li a, #_foot ul li {
+#_foot ul li a,
+#_foot ul li {
     font-size: 0.9rem;
     font-weight: 700;
     padding-right: 10px;
@@ -168,10 +177,13 @@ margin: 0 auto;
     margin-left: -10px;
 }
 
-.post-for-free:hover, #footer>div.footer-content>div.col-2>ul>li:nth-child(1)>a:hover {
+.post-for-free:hover,
+#footer>div.footer-content>div.col-2>ul>li:nth-child(1)>a:hover {
     background-color: rgba(255, 255, 255, 0.3);
     color: white;
 }
+
+
 /* 
 .col-3 {
     flex: 0 0 calc(25% - 20px) !important;
