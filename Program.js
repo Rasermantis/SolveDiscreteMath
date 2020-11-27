@@ -27,7 +27,7 @@ function RemoveColorForBtn(idBtn) {
 function Solve() {
     var karna = new Karnaugh();
     karna.DoShortFormulas(table);
-    var strRes = karna.StrListOfFormulas(8);
+    var strRes = karna.StrListOfFormulas(4);
 
     while (strRes.includes("!x"))
         strRes = strRes.replace("!x", "x&#773");
@@ -42,3 +42,18 @@ function Solve() {
 
     document.getElementById("result").innerHTML = strRes;
 }
+
+var x = new TruthTable(4);
+
+x.SetValueRowTo1(10);
+x.SetValueRowTo1(11);
+x.SetValueRowTo1(9);
+x.SetValueRowTo1(13);
+x.SetValueRowTo1(12);
+
+var table_2 = x.ToTable();
+
+var karna = new Karnaugh();
+karna.DoShortFormulas(table_2);
+var strRes = karna.StrListOfFormulas(4);
+console.log(strRes);

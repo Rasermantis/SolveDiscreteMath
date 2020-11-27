@@ -18,14 +18,14 @@ class Table {
 
     BiggestRects() {
         var rectCont = new Rectangle_container();
-        for (var k = 0; k < table.cells.length; k++) {
-            var beginCell = table.GetCellByName(k + 1);
+        for (var k = 0; k < this.cells.length; k++) {
+            var beginCell = this.GetCellByName(k + 1);
 
             // 2 cells
-            var proUp = Projection.Up(beginCell, 2, table);
-            var proRight = Projection.Right(beginCell, 2, table);
-            var proDown = Projection.Down(beginCell, 2, table);
-            var proLeft = Projection.Left(beginCell, 2, table);
+            var proUp = Projection.Up(beginCell, 2, this);
+            var proRight = Projection.Right(beginCell, 2, this);
+            var proDown = Projection.Down(beginCell, 2, this);
+            var proLeft = Projection.Left(beginCell, 2, this);
 
             if (proUp.isAllValueCellsEqual1())
                 rectCont.Add(proUp.ToRect());
@@ -37,15 +37,15 @@ class Table {
                 rectCont.Add(proLeft.ToRect());
 
             // 4 cells
-            var proUp = Projection.Up(beginCell, 4, table);
-            var proRight = Projection.Right(beginCell, 4, table);
-            var proDown = Projection.Down(beginCell, 4, table);
-            var proLeft = Projection.Left(beginCell, 4, table);
+            var proUp = Projection.Up(beginCell, 4, this);
+            var proRight = Projection.Right(beginCell, 4, this);
+            var proDown = Projection.Down(beginCell, 4, this);
+            var proLeft = Projection.Left(beginCell, 4, this);
 
-            var proUpLeft = Projection.UpLeft(beginCell, 4, table);
-            var proUpRight = Projection.UpRight(beginCell, 4, table);
-            var proDownRight = Projection.DownRight(beginCell, 4, table);
-            var proDownLeft = Projection.DownLeft(beginCell, 4, table);
+            var proUpLeft = Projection.UpLeft(beginCell, 4, this);
+            var proUpRight = Projection.UpRight(beginCell, 4, this);
+            var proDownRight = Projection.DownRight(beginCell, 4, this);
+            var proDownLeft = Projection.DownLeft(beginCell, 4, this);
 
             if (proUp.isAllValueCellsEqual1())
                 rectCont.Add(proUp.ToRect());
@@ -67,14 +67,14 @@ class Table {
 
 
             // 8 cells
-            var proLeftUp = Projection.UpLeft(beginCell, 8, table);
-            var proUpLeft = Projection.UpLeft(beginCell, 8, table);
-            var proUpRight = Projection.UpRight(beginCell, 8, table);
-            var proRightUp = Projection.DownRight(beginCell, 8, table);
-            var proRightDown = Projection.DownLeft(beginCell, 8, table);
-            var proDownRight = Projection.DownLeft(beginCell, 8, table);
-            var proDownLeft = Projection.DownLeft(beginCell, 8, table);
-            var proLeftDown = Projection.LeftDown(beginCell, 8, table);
+            var proLeftUp = Projection.UpLeft(beginCell, 8, this);
+            var proUpLeft = Projection.UpLeft(beginCell, 8, this);
+            var proUpRight = Projection.UpRight(beginCell, 8, this);
+            var proRightUp = Projection.DownRight(beginCell, 8, this);
+            var proRightDown = Projection.DownLeft(beginCell, 8, this);
+            var proDownRight = Projection.DownLeft(beginCell, 8, this);
+            var proDownLeft = Projection.DownLeft(beginCell, 8, this);
+            var proLeftDown = Projection.LeftDown(beginCell, 8, this);
 
             if (proLeftUp.isAllValueCellsEqual1())
                 rectCont.Add(proLeftUp.ToRect());
@@ -128,7 +128,7 @@ class Table {
 
         var cellsBelong1 = this.ListOfCellsBelongOnly1BiggestRect();
         var biggestRects = this.BiggestRects();
-        //debugger;
+
         for (var i = 0; i < cellsBelong1.listOfCells.length; i++) {
             var RectCellBelongTo = cellsBelong1.listOfCells[i].BelongToRect(biggestRects.listOfRects);
             res.Add(RectCellBelongTo);

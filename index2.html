@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>Karnaugh Solve</title>
+
+    <link rel="stylesheet" href="main.css">
+    <script src="Table.js"></script>
+    <script src="Rectangle.js"></script>
+    <script src="Cell.js"></script>
+    <script src="Projection.js"></script>
+    <script src="Rectangle_container.js"></script>
+    <script src="Cell_container.js"></script>
+    <script src="Karnaugh.js"></script>
+    <script src="TruthTable.js"></script>
+    <script src="RowOfTruthTable.js"></script>
+    <script src="Program.js"></script>
+</head>
+
+<body style="width: 100%; margin: 0; ">
+
+    <section>
+        <div class="container center">
+            <form id="myForm">
+                <table style="width:100%">
+                    <tr>
+                        <th>Order</th>
+                        <th>x</th>
+                        <th>y</th>
+                        <th>z</th>
+                        <th>t</th>
+                        <th>value</th>
+                    </tr>
+                    <tr>
+                        <th>0</th>
+
+                        <th>0</th>
+                        <th>0</th>
+                        <th>0</th>
+                        <th>0</th>
+
+                        <th>
+                            <button id="btn16" type="button" onclick="SelectCell(16)">1</button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>1</th>
+
+                        <th>0</th>
+                        <th>0</th>
+                        <th>0</th>
+                        <th>1</th>
+
+                        <th>
+                            <button id="btn12" type="button" onclick="SelectCell(12);">1</button>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>3</th>
+
+                        <th>0</th>
+                        <th>0</th>
+                        <th>1</th>
+                        <th>0</th>
+
+                        <th>
+                            <button id="btn4" type="button" onclick="SelectCell(4);">1</button>
+                        </th>
+                    </tr>
+                </table>
+            </form>
+            <br>
+            <button id="btnSolve" type="button" onclick="Solve()" class="button_">Solve</button>
+            <button class="button_"><a href="index.html" style="text-decoration: none; color: black;">Reset</a></button>
+            <br>
+
+            <br>
+            <textarea id="result" class="res" rows="8" cols="50" style="
+            min-width: 25%;" readonly></textarea>
+
+        </div>
+        <br>
+    </section>
+
+</body>
+
+</html>
