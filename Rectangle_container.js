@@ -48,7 +48,7 @@ class Rectangle_container {
                 res += this.listOfRects[i].XYZTName();
         }
 
-        if (n == 3) {
+        if (n == 4) {
             while (res.includes('t'))
                 res = res.replace('t', '');
         } else if (n == 2) {
