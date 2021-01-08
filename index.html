@@ -9,15 +9,6 @@
     <script src="https://kit.fontawesome.com/912a2064fa.js" crossorigin="anonymous"></script>
 
     <link rel="stylesheet" href="main.css">
-    <script src="Table.js"></script>
-    <script src="Rectangle.js"></script>
-    <script src="Cell.js"></script>
-    <script src="Projection.js"></script>
-    <script src="Rectangle_container.js"></script>
-    <script src="Formula.js"></script>
-    <script src="Cell_container.js"></script>
-    <script src="Karnaugh.js"></script>
-    <script src="Program.js"></script>
     <link rel="icon" href="img/logo1.png" type="image/gif" sizes="16x16">
 </head>
 
@@ -119,12 +110,15 @@
             <textarea id="result" class="res" rows="8" cols="50" style="
             min-width: 25%;" readonly></textarea>
             <br>
-            <hr>
-            <a> Biggest Rectangles: </a> <br>
-            <ul id='biggest_rects' style="list-style-type: none;">
-            </ul>
-            <br>
-            <hr>
+            <div id="biggest_rects_section" style="display: none;">
+                <hr>
+                <a> Biggest Rectangles: </a> <br>
+                <ul id='biggest_rects' style="list-style-type: none;">
+                </ul>
+                <br>
+                <hr>
+            </div>
+
         </div>
         <br>
     </section>
@@ -188,5 +182,14 @@
     </section>
 
 </body>
+<script src="Table.js"></script>
+<script src="Rectangle.js"></script>
+<script src="Cell.js"></script>
+<script src="Projection.js"></script>
+<script src="Rectangle_container.js"></script>
+<script src="Formula.js"></script>
+<script src="Cell_container.js"></script>
+<script src="Karnaugh.js"></script>
+<script src="Program.js"></script>
 
 </html>
