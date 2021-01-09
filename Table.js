@@ -156,6 +156,20 @@ class Table {
         return true;
     }
 
+    isAllCellEqual1() {
+        for (var i = 0; i < this.cells.length; i++)
+            if (this.cells[i].value == 0)
+                return false;
+        return true;
+    }
+
+    isAllCellEqual0() {
+        for (var i = 0; i < this.cells.length; i++)
+            if (this.cells[i].value == 1)
+                return false;
+        return true;
+    }
+
     // Method
     setCellTo0(name) {
         this.GetCellByName(name).value = 0;
