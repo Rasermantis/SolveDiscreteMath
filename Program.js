@@ -145,33 +145,81 @@ function AddTableBasicBiggestRects(tableBasicBiggestRects) {
     // create div and child of div
     var cellCont = new Cell_container();
     for (var i = 0; i < tableBasicBiggestRects.cells.length; i++) {
-        if (tableBasicBiggestRects.cells[i].name == 1) {
+        if (tableBasicBiggestRects.cells[i].value == 1) {
             cellCont.AddCell(tableBasicBiggestRects.cells[i]);
         }
     }
 
+    // add table with basic biggest rects
     var rectTmp = new Rectangle(cellCont.listOfCells);
+    var h4 = document.createElement('h4');
+    var h4Style = "width: 100%; text-align: center; border-bottom: 1px solid #000; line-height: 0.1em; margin: 10px 0 20px;"
+    h4.setAttribute('style', h4Style);
+
     var table_basic_biggest_rects = CreateChildTable(rectTmp, null, false); // div
-
-    //var h4 = document.createElement('h4');
-    //var h4Style = "width: 100%; text-align: center; border-bottom: 1px solid #000; line-height: 0.1em; margin: 10px 0 20px;"
-    //h4.setAttribute('style', h4Style);
-
-    // var span = document.createElement('p');
-    // var spanStyle = "background:#fff; padding:0 10px;";
-    // span.setAttribute('style', spanStyle);
-    // var xyztName = rect.XYZTName(8);
-    // span.setAttribute('style', "font-family: 'Nunito', sans-serif;")
-    // span.innerHTML = "Cell " + cell_only1.name + " belongs to " + ConvRawFormuToStdFormu(xyztName);
-
-    // add everything to site
-    //h4.appendChild(span);
     table_basic_biggest_rects.appendChild(document.createElement('br'));
-    //table_basic_biggest_rects.appendChild(h4);
-    table_basic_biggest_rects.appendChild(document.createElement('br'));
+    table_basic_biggest_rects.appendChild(h4);
 
+    var span = document.createElement('p');
+    var spanStyle = "background:#fff; padding:0 10px;";
+    span.setAttribute('style', spanStyle);
+    span.setAttribute('style', "font-family: 'Nunito', sans-serif;")
+    span.innerHTML = "After filling up table from biggest rectangles in step 2";
+    h4.appendChild(span);
+
+    // add diff cells if it has
+    var listOfCellsDiff = table.listOfCellsDiff(tableBasicBiggestRects);
+    if (listOfCellsDiff.listOfCells.length != 0) {
+        for (var i = 0; i < listOfCellsDiff.listOfCells.length; i++) {
+            var h4 = document.createElement('h4');
+            var h4Style = "width: 100%; text-align: center; border-bottom: 1px solid #000; line-height: 0.1em; margin: 10px 0 20px;";
+            h4.setAttribute('style', h4Style);
+
+            var tableBasicBiggestRects_tmp = tableBasicBiggestRects;
+            tableBasicBiggestRects_tmp.setCellTo1(listOfCellsDiff.listOfCells[i].name);
+
+            var cellCont = new Cell_container();
+            for (var k = 0; k < tableBasicBiggestRects_tmp.cells.length; k++) {
+                if (tableBasicBiggestRects_tmp.cells[k].value == 1) {
+                    cellCont.AddCell(tableBasicBiggestRects_tmp.cells[k]);
+                }
+            }
+            var rectTmp = new Rectangle(cellCont.listOfCells);
+            var cellContTmp = new Cell_container();
+            cellContTmp.AddCell(listOfCellsDiff.listOfCells[i]);
+            var table_complete_by_step = CreateChildTable(rectTmp, cellContTmp, true); // div
+
+            var span = document.createElement('p');
+            span.setAttribute('style', "font-family: 'Nunito', sans-serif;");
+
+            var cellsDiffBeloTo = listOfCellsDiff.listOfCells[i].BelongTo(table.BiggestRects().listOfRects); // rect container
+            if (cellsDiffBeloTo.listOfRects.length == 1)
+                span.innerHTML = "Choose " + ConvRawFormuToStdFormu(cellsDiffBeloTo.listOfRects[0].XYZTName()) + " to fill up cell " + listOfCellsDiff.listOfCells[i].name;
+            else {
+                var str = "";
+                for (var k = 0; k < cellsDiffBeloTo.listOfRects.length; k++) {
+                    if (k != cellsDiffBeloTo.listOfRects.length - 1)
+                        str += ConvRawFormuToStdFormu(cellsDiffBeloTo.listOfRects[k].XYZTName()) + " or ";
+                    else
+                        str += ConvRawFormuToStdFormu(cellsDiffBeloTo.listOfRects[k].XYZTName());
+                }
+                span.innerHTML = "Choose " + str + " to fill up cell " + listOfCellsDiff.listOfCells[i].name;
+            }
+            h4.appendChild(span);
+            table_basic_biggest_rects.appendChild(table_complete_by_step);
+            table_basic_biggest_rects.appendChild(h4);
+        }
+    }
+
+
+    table_basic_biggest_rects.appendChild(document.createElement('br'));
     table_basic_biggest_rects_li.appendChild(table_basic_biggest_rects);
     table_basic_biggest_rects_ul.appendChild(table_basic_biggest_rects_li);
+}
+
+function AddResult() {
+    var result = document.getElementById("result_2");
+    result.innerHTML = document.getElementById("result").innerHTML;
 }
 
 function ConvRawFormuToStdFormu(rawFormuStr) {
@@ -244,12 +292,22 @@ function Solve() {
     while (table_basic_biggest_rects_ul.lastElementChild)
         table_basic_biggest_rects_ul.removeChild(table_basic_biggest_rects_ul.lastElementChild);
 
-    if (!table_basic_biggest_rects.isAllCellEqual0()) {
-        AddTableBasicBiggestRects(table_basic_biggest_rects);
+    if (!table.isAllCellEqual0()) {
+        if (!table_basic_biggest_rects.isAllCellEqual0())
+            AddTableBasicBiggestRects(table_basic_biggest_rects);
+        else {
+            var label = document.createElement('div');
+            label.appendChild(document.createTextNode('There is no biggest rectangle in step 2.'));
+            table_basic_biggest_rects_ul.appendChild(label);
+        }
     } else {
-        //document.getElementById("biggest_rects_section").style.display = "none";
         var label = document.createElement('div');
         label.appendChild(document.createTextNode('Do nothing.'));
         table_basic_biggest_rects_ul.appendChild(label);
     }
+
+    //add result
+    document.getElementById("result_section").style.display = "block";
+    AddResult();
+
 }

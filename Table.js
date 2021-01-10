@@ -183,4 +183,9 @@ class Table {
         for (var i = 0; i < nameCellList.length; i++)
             this.setCellTo1(nameCellList[i]);
     }
+
+    setCellTo1ByCellCont(cellCont) {
+        for (var i = 0; i < cellCont.listOfCells.length; i++)
+            this.setCellTo1(cellCont.listOfCells[i].name);
+    }
 };
