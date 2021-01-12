@@ -150,7 +150,7 @@ td {
     background-image: linear-gradient(to bottom, hsl(0, 0%, 98%), hsl(0, 0%, 90%));
 }
 
-#result {
+#result, #result_2 {
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
     font-size: 20px;
@@ -396,4 +396,9 @@ margin: 0 auto;
     height: 20px;
     width: 20px;
     background-color: grey;
+}
+
+#biggest_rects > li:nth-child(1) > div{
+    margin: 0 auto;
+    text-align:  center;
 }
