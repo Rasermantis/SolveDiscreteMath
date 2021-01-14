@@ -55,7 +55,7 @@ class Rectangle {
         return true;
     }
 
-    XYZTName() {
+    XYZTName(n) {
         var showX = "";
         var showY = "";
         var showZ = "";
@@ -186,6 +186,17 @@ class Rectangle {
                 showT = "!t";
         }
         var res = showX + showY + showZ + showT;
+
+        // Check of num of variables
+        if (n == 4) {
+            while (res.includes('t'))
+                res = res.replace('t', '');
+        } else if (n == 2) {
+            while (res.includes('t'))
+                res = res.replace('t', '');
+            while (res.includes('z'))
+                res = res.replace('z', '');
+        }
 
         return res;
     }
