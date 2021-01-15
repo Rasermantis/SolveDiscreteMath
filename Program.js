@@ -3,6 +3,8 @@ numOfVaris.addEventListener("change", function() {
     if (numOfVaris.value == "4") {
         for (var i = 1; i <= 16; i++) {
             document.getElementById("btn" + i).style.display = "block";
+            if (document.getElementById("btn" + i).style.color == "red")
+                SelectCell(i);
         }
 
         document.getElementById("x").innerHTML = "X";
@@ -27,6 +29,9 @@ numOfVaris.addEventListener("change", function() {
                 document.getElementById("btn" + i).style.display = "none";
             else
                 document.getElementById("btn" + i).style.display = "block";
+
+            if (document.getElementById("btn" + i).style.color == "red")
+                SelectCell(i);
         }
 
         document.getElementById("x").innerHTML = "X";
@@ -50,6 +55,9 @@ numOfVaris.addEventListener("change", function() {
                 document.getElementById("btn" + i).style.display = "none";
             else
                 document.getElementById("btn" + i).style.display = "block";
+
+            if (document.getElementById("btn" + i).style.color == "red")
+                SelectCell(i);
         }
 
         document.getElementById("x").innerHTML = "X";
