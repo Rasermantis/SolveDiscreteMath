@@ -13,21 +13,21 @@
 </head>
 
 <body style="width: 100%; margin: 0; ">
-
     <section class="header">
         <div class="header_">
             <a href="index.html"><img src="img/logo1.png" alt="logo1" style="height: 5rem;"></a>
             <ul class="nav navbar-nav">
                 <li><a href="index.html" class="nav-elem">Home</a></li>
-                <li><a href="about.html" class="nav-elem">About us</a></li>
-                <li><a href="#" class="nav-elem">Work with us</a></li>
+                <li><a href="about.html" class="nav-elem">About Us</a></li>
+                <li><a href="#" class="nav-elem">Work With Us</a></li>
                 <li><a href="#footer" class="nav-elem">Help</a></li>
                 <li class="header-social">
                     <a href="http://fb.com" target="_blank" id="fb" style="padding: 10px 14px;"><i
                             class="fa fa-facebook"></i></a>
                 </li>
                 <li class="header-social">
-                    <a href="https://www.instagram.com/" target="_blank" id="ins" style="margin-left: -.5rem; padding: 10px 12px;"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank" id="ins"
+                        style="margin-left: -.5rem; padding: 10px 12px;"><i class="fa fa-instagram"></i></a>
                 </li>
             </ul>
         </div>
@@ -46,107 +46,103 @@
     </section>
     <section>
         <div class="container center">
-            <div class="main-body" style="position: sticky; top: 10%;">
-                <ul class="side-bars">
+            <div style="padding: 5rem;">
+                <div class="main-body" style="position: sticky; top: 10%;">
+                    <ul class="side-bars">
 
-                    <li><a href="index.html" style="text-decoration: none;">Karnaugh Map</a></li>
-                    <br>
-                    <li><a href="index2.html" style="text-decoration: none;">Truth Table</a></li>
+                        <li><a href="index.html" style="text-decoration: none;">Karnaugh</a></li>
+                        <br>
+                        <li><a href="index2.html" style="text-decoration: none;">Truth Table</a></li>
 
-                </ul>
-            </div>
-            <form id="myForm">
-                <label for="numOfVaris">Number of variables:</label>
-
-                <select id="numOfVaris">
-                    <option value="4">4</option>
-                    <option value="3">3</option>
-                    <option value="2">2</option>
-                </select>
-                <table class="center">
-                    <tr>
-                        <th></th>
-                        <td id="x" colspan="2">X</td>
-                        <td id="_x" colspan="2" style="text-decoration: overline;">X</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th id="z" rowspan="2">Z</th>
-                        <td><button id="btn1" type="button" onclick="SelectCell(1);">01</button></td>
-                        <td><button id="btn2" type="button" onclick="SelectCell(2);">02</button></td>
-                        <td><button id="btn3" type="button" onclick="SelectCell(3);">03</button></td>
-                        <td><button id="btn4" type="button" onclick="SelectCell(4);">04</button></td>
-                        <th id="_t1" style="text-decoration: overline;">T</th>
-                    </tr>
-                    <tr>
-                        <td><button id="btn5" type="button" onclick="SelectCell(5);">05</button></td>
-                        <td><button id="btn6" type="button" onclick="SelectCell(6);">06</button></td>
-                        <td><button id="btn7" type="button" onclick="SelectCell(7);">07</button></td>
-                        <td><button id="btn8" type="button" onclick="SelectCell(8);">08</button></td>
-                        <th id="t" rowspan="2">T</th>
-                    </tr>
-                    <tr>
-                        <th id="_z" rowspan="2" style="text-decoration: overline;">Z</th>
-                        <td><button id="btn9" type="button" onclick="SelectCell(9);">09</button></td>
-                        <td><button id="btn10" type="button" onclick="SelectCell(10);">10</button></td>
-                        <td><button id="btn11" type="button" onclick="SelectCell(11);">11</button></td>
-                        <td><button id="btn12" type="button" onclick="SelectCell(12);">12</button></td>
-                    </tr>
-                    <tr>
-                        <td><button id="btn13" type="button" onclick="SelectCell(13);">13</button></td>
-                        <td><button id="btn14" type="button" onclick="SelectCell(14);">14</button></td>
-                        <td><button id="btn15" type="button" onclick="SelectCell(15);">15</button></td>
-                        <td><button id="btn16" type="button" onclick="SelectCell(16);">16</button></td>
-                        <th id="_t2" style="text-decoration: overline;">T</th>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td id="_y1" style="text-decoration: overline;">Y</td>
-                        <td id="y" colspan="2">Y</td>
-                        <td id="_y2" style="text-decoration: overline;">Y</td>
-                        <th></th>
-                    </tr>
-                </table>
-            </form>
-            <br>
-            <button id="btnSolve" type="button" onclick="BeforeSolve();" class="button_">Solve</button>
-            <a href="index.html" style="text-decoration: none; color: black;"></ahref><button class="button_">
-                    Reset</button></a>
-            <br>
-            <br>
-            <textarea id="result" class="res" rows="8" cols="50" style="
+                    </ul>
+                </div>
+                <form id="myForm">
+                    <table class="center">
+                        <tr>
+                            <th></th>
+                            <td colspan="2">X</td>
+                            <td colspan="2" style="text-decoration: overline;">X</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">Z</th>
+                            <td><button id="btn1" type="button" onclick="SelectCell(1);">01</button></td>
+                            <td><button id="btn2" type="button" onclick="SelectCell(2);">02</button></td>
+                            <td><button id="btn3" type="button" onclick="SelectCell(3);">03</button></td>
+                            <td><button id="btn4" type="button" onclick="SelectCell(4);">04</button></td>
+                            <th style="text-decoration: overline;">T</th>
+                        </tr>
+                        <tr>
+                            <td><button id="btn5" type="button" onclick="SelectCell(5);">05</button></td>
+                            <td><button id="btn6" type="button" onclick="SelectCell(6);">06</button></td>
+                            <td><button id="btn7" type="button" onclick="SelectCell(7);">07</button></td>
+                            <td><button id="btn8" type="button" onclick="SelectCell(8);">08</button></td>
+                            <th rowspan="2">T</th>
+                        </tr>
+                        <tr>
+                            <th rowspan="2" style="text-decoration: overline;">Z</th>
+                            <td><button id="btn9" type="button" onclick="SelectCell(9);">09</button></td>
+                            <td><button id="btn10" type="button" onclick="SelectCell(10);">10</button></td>
+                            <td><button id="btn11" type="button" onclick="SelectCell(11);">11</button></td>
+                            <td><button id="btn12" type="button" onclick="SelectCell(12);">12</button></td>
+                        </tr>
+                        <tr>
+                            <td><button id="btn13" type="button" onclick="SelectCell(13);">13</button></td>
+                            <td><button id="btn14" type="button" onclick="SelectCell(14);">14</button></td>
+                            <td><button id="btn15" type="button" onclick="SelectCell(15);">15</button></td>
+                            <td><button id="btn16" type="button" onclick="SelectCell(16);">16</button></td>
+                            <th style="text-decoration: overline;">T</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <td style="text-decoration: overline;">Y</td>
+                            <td colspan="2">Y</td>
+                            <td style="text-decoration: overline;">Y</td>
+                            <th></th>
+                        </tr>
+                    </table>
+                </form>
+                <br>
+                <button id="btnSolve" type="button" onclick="Solve()" class="button_">Solve</button>
+                <a href="index.html" style="text-decoration: none; color: black;"></ahref><button class="button_">
+                        Reset</button></a>
+                <br>
+                <br>
+                <textarea id="result" class="res" rows="8" cols="50" style="
             min-width: 25%;" readonly></textarea>
+            </div>
             <br>
-            <div id="biggest_rects_section" style="display: none;">
+            <div id="biggest_rects_section" style="display: none; font-family: sans-serif;">
                 <hr>
-                <a><strong>Step 1</strong>: Biggest rectangles </a> <br>
+                <p><strong>Step 1</strong><b>: Biggest rectangles </b></p> <br>
                 <ul id='biggest_rects' style="list-style-type: none;">
                 </ul>
                 <br>
                 <hr>
             </div>
-            <div id="cell_only1s_section" style="display: none;">
+            <div id="cell_only1s_section" style="display: none; font-family: sans-serif;">
                 <hr>
-                <a><strong>Step 2</strong>: Finding cells belong to only 1 biggest rectangle </a> <br>
+                <p><strong>Step 2</strong><b>: Finding cells belong to only 1 biggest rectangle </b></p> <br>
                 <ul id='cell_only1s' style="list-style-type: none;">
                 </ul>
                 <br>
                 <hr>
             </div>
-            <div id="table_basic_rectangles_section" style="display: none;">
+            <div id="table_basic_rectangles_section" style="display: none; font-family: sans-serif;">
                 <hr>
-                <a><strong>Step 3</strong>: Filling up table</a> <br>
+                <p><strong>Step 3</strong><b>: Filling up table</b></p> <br>
                 <ul id='table_basic_rectangles' style="list-style-type: none;">
                 </ul>
                 <br>
                 <hr>
             </div>
-            <div id="result_section" style="display: none;">
+            <div id="result_section" style="display: none; font-family: sans-serif;">
                 <hr>
-                <a><strong>Step 4</strong>: Result</a> <br>
+                <p><strong>Step 4</strong><b>: Result</b></p> <br>
                 <ul id='result_ul' style="list-style-type: none;">
                     <li>
-                        <textarea id="result_2" class="res" rows="8" cols="50" style="min-width: 25%;" readonly=""></textarea>
+                        <textarea id="result_2" class="res" rows="8" cols="50" style="min-width: 25%;"
+                            readonly=""></textarea>
                     </li>
                 </ul>
                 <br>
@@ -202,7 +198,7 @@
                 </div>
 
                 <div class="col-4">
-                    <h3>Follow us</h3>
+                    <h3>Follow Us</h3>
                     <a href="http://fb.com" target="_blank" id="fb"><i class="fa fa-facebook"></i></a>
                     <a href="https://www.instagram.com/" target="_blank" id="ins"><i class="fa fa-instagram"></i></a>
                     <a href="https://twitter.com/" target="_blank" id="tw"><i class="fa fa-twitter"></i></a>
