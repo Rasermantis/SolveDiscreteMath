@@ -1,72 +1,75 @@
 var numOfVaris = document.getElementById("numOfVaris");
-numOfVaris.addEventListener("change", function() {
-    if (numOfVaris.value == "4") {
-        for (var i = 1; i <= 16; i++) {
-            document.getElementById("btn" + i).style.display = "block";
-        }
-
-        document.getElementById("x").innerHTML = "X";
-        document.getElementById("_x").innerHTML = "X";
-
-        document.getElementById("y").innerHTML = "Y";
-        document.getElementById("_y1").innerHTML = "Y";
-        document.getElementById("_y2").innerHTML = "Y";
-
-        document.getElementById("z").innerHTML = "Z";
-        document.getElementById("_z").innerHTML = "Z";
-
-        document.getElementById("t").innerHTML = "T";
-        document.getElementById("_t1").innerHTML = "T";
-        document.getElementById("_t2").innerHTML = "T";
-
-
-    } else if (numOfVaris.value == "3") {
-        for (var i = 1; i <= 16; i++) {
-            if (i == 1 || i == 2 || i == 3 || i == 4 ||
-                i == 13 || i == 14 || i == 15 || i == 16)
-                document.getElementById("btn" + i).style.display = "none";
-            else
+if (numOfVaris != null) {
+    numOfVaris.addEventListener("change", function() {
+        if (numOfVaris.value == "4") {
+            for (var i = 1; i <= 16; i++) {
                 document.getElementById("btn" + i).style.display = "block";
+            }
+
+            document.getElementById("x").innerHTML = "X";
+            document.getElementById("_x").innerHTML = "X";
+
+            document.getElementById("y").innerHTML = "Y";
+            document.getElementById("_y1").innerHTML = "Y";
+            document.getElementById("_y2").innerHTML = "Y";
+
+            document.getElementById("z").innerHTML = "Z";
+            document.getElementById("_z").innerHTML = "Z";
+
+            document.getElementById("t").innerHTML = "T";
+            document.getElementById("_t1").innerHTML = "T";
+            document.getElementById("_t2").innerHTML = "T";
+
+
+        } else if (numOfVaris.value == "3") {
+            for (var i = 1; i <= 16; i++) {
+                if (i == 1 || i == 2 || i == 3 || i == 4 ||
+                    i == 13 || i == 14 || i == 15 || i == 16)
+                    document.getElementById("btn" + i).style.display = "none";
+                else
+                    document.getElementById("btn" + i).style.display = "block";
+            }
+
+            document.getElementById("x").innerHTML = "X";
+            document.getElementById("_x").innerHTML = "X";
+
+            document.getElementById("y").innerHTML = "Y";
+            document.getElementById("_y1").innerHTML = "Y";
+            document.getElementById("_y2").innerHTML = "Y";
+
+            document.getElementById("z").innerHTML = "Z";
+            document.getElementById("_z").innerHTML = "Z";
+
+            document.getElementById("t").innerHTML = " ";
+            document.getElementById("_t1").innerHTML = " ";
+            document.getElementById("_t2").innerHTML = " ";
+        } else if (numOfVaris.value == "2") {
+            for (var i = 1; i <= 16; i++) {
+                if (i == 1 || i == 2 || i == 3 || i == 4 ||
+                    i == 9 || i == 10 || i == 11 || i == 12 ||
+                    i == 13 || i == 14 || i == 15 || i == 16)
+                    document.getElementById("btn" + i).style.display = "none";
+                else
+                    document.getElementById("btn" + i).style.display = "block";
+            }
+
+            document.getElementById("x").innerHTML = "X";
+            document.getElementById("_x").innerHTML = "X";
+
+            document.getElementById("y").innerHTML = "Y";
+            document.getElementById("_y1").innerHTML = "Y";
+            document.getElementById("_y2").innerHTML = "Y";
+
+            document.getElementById("z").innerHTML = " ";
+            document.getElementById("_z").innerHTML = " ";
+
+            document.getElementById("t").innerHTML = " ";
+            document.getElementById("_t1").innerHTML = " ";
+            document.getElementById("_t2").innerHTML = " ";
         }
+    });
+}
 
-        document.getElementById("x").innerHTML = "X";
-        document.getElementById("_x").innerHTML = "X";
-
-        document.getElementById("y").innerHTML = "Y";
-        document.getElementById("_y1").innerHTML = "Y";
-        document.getElementById("_y2").innerHTML = "Y";
-
-        document.getElementById("z").innerHTML = "Z";
-        document.getElementById("_z").innerHTML = "Z";
-
-        document.getElementById("t").innerHTML = " ";
-        document.getElementById("_t1").innerHTML = " ";
-        document.getElementById("_t2").innerHTML = " ";
-    } else if (numOfVaris.value == "2") {
-        for (var i = 1; i <= 16; i++) {
-            if (i == 1 || i == 2 || i == 3 || i == 4 ||
-                i == 9 || i == 10 || i == 11 || i == 12 ||
-                i == 13 || i == 14 || i == 15 || i == 16)
-                document.getElementById("btn" + i).style.display = "none";
-            else
-                document.getElementById("btn" + i).style.display = "block";
-        }
-
-        document.getElementById("x").innerHTML = "X";
-        document.getElementById("_x").innerHTML = "X";
-
-        document.getElementById("y").innerHTML = "Y";
-        document.getElementById("_y1").innerHTML = "Y";
-        document.getElementById("_y2").innerHTML = "Y";
-
-        document.getElementById("z").innerHTML = " ";
-        document.getElementById("_z").innerHTML = " ";
-
-        document.getElementById("t").innerHTML = " ";
-        document.getElementById("_t1").innerHTML = " ";
-        document.getElementById("_t2").innerHTML = " ";
-    }
-});
 
 
 
