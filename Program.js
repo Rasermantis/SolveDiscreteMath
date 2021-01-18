@@ -1,4 +1,5 @@
 var numOfVaris = document.getElementById("numOfVaris");
+
 if (numOfVaris != null) {
     numOfVaris.addEventListener("change", function() {
         if (numOfVaris.value == "4") {
